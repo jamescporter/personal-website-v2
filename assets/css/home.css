@@ -1,0 +1,408 @@
+/* Homepage-specific presentation; no al-folio layout or theme overrides. */
+.jp-home {
+  --jp-accent: #235c7c;
+  --jp-accent-contrast: #fff;
+  --jp-subtle: #5a6975;
+  --jp-border: #dce3e7;
+  --jp-surface: #f5f8fa;
+  --jp-focus-surface: #edf3f6;
+  color: var(--global-text-color, #202b32);
+  padding: 1.3rem 0 5rem;
+}
+
+html[data-theme="dark"] .jp-home {
+  --jp-accent: #9bc9e6;
+  --jp-accent-contrast: #102733;
+  --jp-subtle: #b4c0c9;
+  --jp-border: #3c4a54;
+  --jp-surface: #202a32;
+  --jp-focus-surface: #263440;
+}
+
+.jp-home a {
+  text-decoration: none;
+}
+.jp-home a:focus-visible {
+  outline: 3px solid var(--jp-accent);
+  outline-offset: 4px;
+  border-radius: 5px;
+}
+.jp-home h1,
+.jp-home h2,
+.jp-home h3,
+.jp-home p {
+  margin-top: 0;
+}
+.jp-home h1,
+.jp-home h2,
+.jp-home h3 {
+  color: inherit;
+}
+.jp-home .jp-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(260px, 0.85fr);
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: center;
+  padding: 2.6rem 0 3.7rem;
+  border-bottom: 1px solid var(--jp-border);
+}
+.jp-home .jp-eyebrow,
+.jp-home .jp-kicker,
+.jp-home .jp-focus-label {
+  font-size: 0.72rem;
+  font-weight: 750;
+  letter-spacing: 0.105em;
+  text-transform: uppercase;
+}
+.jp-home .jp-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  color: var(--jp-accent);
+  margin-bottom: 1.45rem;
+}
+.jp-home .jp-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: currentColor;
+  flex: none;
+}
+.jp-home h1 {
+  font-size: clamp(2.85rem, 6.2vw, 4.6rem);
+  font-weight: 780;
+  line-height: 1.08;
+  letter-spacing: -0.055em;
+  margin-bottom: 1.05rem;
+}
+.jp-home .jp-period {
+  color: var(--jp-accent);
+}
+.jp-home .jp-lead {
+  font-size: clamp(1.28rem, 2.5vw, 1.7rem);
+  font-weight: 570;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+  max-width: 32ch;
+  margin-bottom: 1.15rem;
+}
+.jp-home .jp-summary {
+  max-width: 61ch;
+  color: var(--jp-subtle);
+  font-size: 1rem;
+  line-height: 1.75;
+  margin-bottom: 1.7rem;
+}
+.jp-home .jp-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.25rem;
+}
+.jp-home .jp-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.1rem;
+  border: 1px solid var(--jp-border);
+  padding: 0.7rem 1.15rem;
+  border-radius: 7px;
+  font-weight: 650;
+  font-size: 0.88rem;
+  transition:
+    transform 0.15s ease,
+    border-color 0.15s ease;
+}
+.jp-home .jp-button:hover {
+  transform: translateY(-2px);
+}
+.jp-home .jp-button-primary {
+  background: var(--jp-accent);
+  color: var(--jp-accent-contrast);
+  border-color: var(--jp-accent);
+}
+.jp-home .jp-button-primary:hover {
+  color: var(--jp-accent-contrast);
+}
+.jp-home .jp-button-secondary {
+  background: transparent;
+  color: inherit;
+}
+.jp-home .jp-button-secondary:hover {
+  border-color: var(--jp-accent);
+  color: var(--jp-accent);
+}
+.jp-home .jp-profile-links {
+  color: var(--jp-subtle);
+  font-size: 0.86rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin: 0;
+}
+.jp-home .jp-profile-links a {
+  color: inherit;
+}
+.jp-home .jp-profile-links a:hover {
+  color: var(--jp-accent);
+}
+.jp-home .jp-focus {
+  background: var(--jp-focus-surface);
+  padding: clamp(1.5rem, 3vw, 2.3rem);
+  border: 1px solid var(--jp-border);
+  border-radius: 12px;
+}
+.jp-home .jp-focus-label {
+  color: var(--jp-accent);
+  margin-bottom: 1rem;
+}
+.jp-home .jp-focus h2 {
+  font-size: 1.65rem;
+  line-height: 1.3;
+  letter-spacing: -0.035em;
+  font-weight: 690;
+  margin-bottom: 1.65rem;
+}
+.jp-home .jp-focus-item {
+  display: grid;
+  gap: 0.35rem;
+  padding: 0.85rem 0;
+  border-top: 1px solid var(--jp-border);
+}
+.jp-home .jp-focus-item span {
+  color: var(--jp-subtle);
+  font-size: 0.77rem;
+}
+.jp-home .jp-focus-item strong {
+  font-weight: 620;
+  font-size: 0.92rem;
+  line-height: 1.4;
+}
+.jp-home .jp-section {
+  margin-top: 3.4rem;
+}
+.jp-home .jp-section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+.jp-home .jp-kicker {
+  color: var(--jp-accent);
+  margin-bottom: 0.45rem;
+}
+.jp-home .jp-section-heading h2 {
+  font-size: clamp(1.55rem, 3vw, 2rem);
+  font-weight: 720;
+  letter-spacing: -0.035em;
+  line-height: 1.2;
+  margin-bottom: 0;
+}
+.jp-home .jp-section-link {
+  font-size: 0.86rem;
+  color: var(--jp-accent);
+  font-weight: 630;
+  white-space: nowrap;
+  padding-bottom: 0.2rem;
+}
+.jp-home .jp-section-link:hover {
+  text-decoration: underline;
+}
+.jp-home .jp-work-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+.jp-home .jp-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 245px;
+  padding: 1.4rem;
+  border: 1px solid var(--jp-border);
+  border-radius: 10px;
+  color: inherit;
+  transition:
+    border-color 0.15s ease,
+    transform 0.15s ease,
+    background 0.15s ease;
+}
+.jp-home .jp-card:hover {
+  color: inherit;
+  border-color: var(--jp-accent);
+  background: var(--jp-surface);
+  transform: translateY(-3px);
+}
+.jp-home .jp-card-number {
+  color: var(--jp-accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-bottom: 1.45rem;
+}
+.jp-home .jp-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+  margin-bottom: 0.6rem;
+}
+.jp-home .jp-card p {
+  color: var(--jp-subtle);
+  font-size: 0.88rem;
+  line-height: 1.65;
+  margin-bottom: 1.2rem;
+}
+.jp-home .jp-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  color: var(--jp-accent);
+  font-size: 0.8rem;
+  font-weight: 650;
+}
+.jp-home .jp-career {
+  margin-top: 3.6rem;
+}
+.jp-home .jp-link-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+.jp-home .jp-link-card {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  padding: 1.4rem;
+  background: var(--jp-surface);
+  border: 1px solid var(--jp-border);
+  border-radius: 9px;
+  color: inherit;
+}
+.jp-home .jp-link-card:hover {
+  color: inherit;
+  border-color: var(--jp-accent);
+}
+.jp-home .jp-link-card span:first-child {
+  color: var(--jp-subtle);
+  font-size: 0.75rem;
+}
+.jp-home .jp-link-card h3 {
+  font-size: 1.13rem;
+  font-weight: 700;
+  margin: 0.45rem 0;
+}
+.jp-home .jp-link-card p {
+  color: var(--jp-subtle);
+  font-size: 0.86rem;
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+.jp-home .jp-link-arrow {
+  color: var(--jp-accent);
+  font-size: 1.4rem;
+  flex: none;
+}
+.jp-home .jp-personal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  border-top: 1px solid var(--jp-border);
+  margin-top: 3.5rem;
+  padding-top: 2.4rem;
+}
+.jp-home .jp-personal h2 {
+  font-size: 1.55rem;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+  margin-bottom: 0.7rem;
+}
+.jp-home .jp-personal p:not(.jp-kicker) {
+  color: var(--jp-subtle);
+  line-height: 1.6;
+  max-width: 58ch;
+  margin-bottom: 0;
+  font-size: 0.91rem;
+}
+.jp-home .jp-personal-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  min-width: 158px;
+}
+.jp-home .jp-personal-links a {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.4rem;
+  color: var(--jp-accent);
+  font-size: 0.87rem;
+  font-weight: 670;
+}
+.jp-home .jp-personal-links a:hover {
+  text-decoration: underline;
+}
+@media (max-width: 760px) {
+  .jp-home {
+    padding-top: 0;
+  }
+  .jp-home .jp-hero {
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
+    padding: 1.2rem 0 2.6rem;
+  }
+  .jp-home .jp-focus {
+    max-width: none;
+  }
+  .jp-home .jp-work-grid {
+    grid-template-columns: 1fr;
+  }
+  .jp-home .jp-card {
+    min-height: 0;
+  }
+  .jp-home .jp-card-number {
+    margin-bottom: 0.85rem;
+  }
+  .jp-home .jp-link-grid {
+    grid-template-columns: 1fr;
+  }
+  .jp-home .jp-personal {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.4rem;
+  }
+  .jp-home .jp-personal-links {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+}
+@media (max-width: 480px) {
+  .jp-home .jp-section-heading {
+    align-items: start;
+    flex-direction: column;
+  }
+  .jp-home .jp-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .jp-home .jp-button {
+    justify-content: space-between;
+  }
+  .jp-home .jp-eyebrow {
+    font-size: 0.66rem;
+    letter-spacing: 0.07em;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .jp-home .jp-button,
+  .jp-home .jp-card {
+    transition: none;
+  }
+  .jp-home .jp-button:hover,
+  .jp-home .jp-card:hover {
+    transform: none;
+  }
+}
