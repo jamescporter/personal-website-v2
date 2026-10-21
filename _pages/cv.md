@@ -64,7 +64,7 @@ nav_order: 4
         <div>
           <h3>Research and Development Engineer <span class="xp-role-type">Industry</span></h3>
           <p class="xp-organisation">bet365 · Stoke-on-Trent</p>
-          <p>Worked on responsible-gambling research, applying Python, SQL, exploratory analysis, clustering and predictive modelling to large-scale behavioural records. Communicated technical findings to non-technical stakeholders, with an emphasis on identifying patterns relevant to customer safety.</p>
+          <p>Undertook quantitative research and development work in an industry setting, applying analytical and programming skills to complex problems and communicating technical findings to colleagues with different backgrounds.</p>
         </div>
       </article>
 
