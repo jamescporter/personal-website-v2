@@ -86,6 +86,7 @@ nav_order: 4
         </div>
       </article>
     </div>
+
   </section>
 
   <section class="xp-section" id="education" aria-labelledby="xp-education-title">
