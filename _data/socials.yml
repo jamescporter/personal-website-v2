@@ -1,3 +1,7 @@
-# Social profiles displayed by al-folio; add verified profile IDs as needed.
+# Social profiles, with identifiers carried over from the previous website.
+# ORCID is confirmed by the University of Edinburgh Research Explorer.
 github_username: jamescporter
+linkedin_username: jamesclaxporter
+orcid_id: 0009-0002-5932-0984
+work_url: https://www.research.ed.ac.uk/en/persons/james-c-porter/
 email: jamesclaxporter@gmail.com
