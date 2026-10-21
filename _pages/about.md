@@ -17,7 +17,7 @@ permalink: /
         <a class="jp-button jp-button-primary" href="{{ '/research/' | relative_url }}">Explore research <span aria-hidden="true">&rarr;</span></a>
         <a class="jp-button jp-button-secondary" href="{{ '/cv/' | relative_url }}">View CV <span aria-hidden="true">&rarr;</span></a>
       </div>
-      <p class="jp-profile-links"><a href="https://github.com/jamescporter">GitHub <span aria-hidden="true">&nearr;</span></a><span aria-hidden="true">·</span><a href="{{ '/links/' | relative_url }}">Profiles and contact <span aria-hidden="true">&rarr;</span></a></p>
+      <p class="jp-profile-links"><a href="https://github.com/{{ site.data.socials.github_username }}">GitHub <span aria-hidden="true">&nearr;</span></a><span aria-hidden="true">·</span><a href="https://www.linkedin.com/in/{{ site.data.socials.linkedin_username }}">LinkedIn <span aria-hidden="true">&nearr;</span></a><span aria-hidden="true">·</span><a href="https://orcid.org/{{ site.data.socials.orcid_id }}">ORCID <span aria-hidden="true">&nearr;</span></a><span aria-hidden="true">·</span><a href="{{ '/links/' | relative_url }}">All links <span aria-hidden="true">&rarr;</span></a></p>
     </div>
     <aside class="jp-focus" aria-label="Research at a glance">
       <p class="jp-focus-label">Research at a glance</p>
