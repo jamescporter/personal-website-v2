@@ -15,7 +15,7 @@ permalink: /
       <p class="jp-summary">I am a PhD researcher investigating how retinal imaging can inform our understanding of neurodegenerative disease. My work combines medical imaging, statistical modelling and large-scale biomedical data.</p>
       <div class="jp-actions">
         <a class="jp-button jp-button-primary" href="{{ '/research/' | relative_url }}">Explore research <span aria-hidden="true">&rarr;</span></a>
-        <a class="jp-button jp-button-secondary" href="{{ '/cv/' | relative_url }}">View CV <span aria-hidden="true">&rarr;</span></a>
+        <a class="jp-button jp-button-secondary" href="{{ '/cv/' | relative_url }}">Experience &amp; education <span aria-hidden="true">&rarr;</span></a>
       </div>
       <p class="jp-profile-links"><a href="https://github.com/{{ site.data.socials.github_username }}">GitHub <span aria-hidden="true">↗</span></a><span aria-hidden="true">·</span><a href="https://www.linkedin.com/in/{{ site.data.socials.linkedin_username }}">LinkedIn <span aria-hidden="true">↗</span></a><span aria-hidden="true">·</span><a href="https://orcid.org/{{ site.data.socials.orcid_id }}">ORCID <span aria-hidden="true">↗</span></a><span aria-hidden="true">·</span><a href="{{ '/links/' | relative_url }}">All links <span aria-hidden="true">&rarr;</span></a></p>
     </div>
@@ -55,7 +55,7 @@ permalink: /
   <section class="jp-section jp-career" aria-labelledby="jp-career-heading">
     <div class="jp-section-heading"><div><p class="jp-kicker">02 / Background</p><h2 id="jp-career-heading">Career &amp; academic work</h2></div></div>
     <div class="jp-link-grid">
-      <a class="jp-link-card" href="{{ '/cv/' | relative_url }}"><div><span>Background</span><h3>Curriculum vitae</h3><p>Research experience, methods and professional background.</p></div><span class="jp-link-arrow" aria-hidden="true">&rarr;</span></a>
+      <a class="jp-link-card" href="{{ '/cv/' | relative_url }}"><div><span>Background</span><h3>Experience &amp; education</h3><p>Selected roles, qualifications and technical expertise.</p></div><span class="jp-link-arrow" aria-hidden="true">&rarr;</span></a>
       <a class="jp-link-card" href="{{ '/publications/' | relative_url }}"><div><span>Research outputs</span><h3>Publications</h3><p>Academic publications and related outputs as they become available.</p></div><span class="jp-link-arrow" aria-hidden="true">&rarr;</span></a>
     </div>
   </section>
