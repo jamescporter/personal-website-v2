@@ -583,3 +583,15 @@ ninja-keys::part(ninja-input) {
   background: transparent;
   cursor: pointer;
 }
+
+/* Replace spacing previously supplied by navbar-expand-sm. */
+#navbar .nav-link {
+  padding: 8px;
+}
+#navbar .navbar-menu-list {
+  gap: 4px;
+}
+/* Highlighted search matches must contrast with the selected accent fill. */
+ninja-keys::part(ninja-selected) {
+  --ninja-accent-color: var(--global-hover-text-color);
+}
