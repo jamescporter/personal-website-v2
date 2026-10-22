@@ -217,3 +217,11 @@ button:focus-visible,
   background: transparent;
   cursor: pointer;
 }
+
+/* Replace spacing previously supplied by navbar-expand-sm. */
+#navbar .nav-link {
+  padding: 8px;
+}
+#navbar .navbar-menu-list {
+  gap: 4px;
+}
