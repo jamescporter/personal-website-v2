@@ -595,3 +595,11 @@ ninja-keys::part(ninja-input) {
 ninja-keys::part(ninja-selected) {
   --ninja-accent-color: var(--global-hover-text-color);
 }
+
+/* Keep each portfolio case study together when printing to A4. */
+@media print {
+  #main-content :is(#retinal-imaging, #retfound-packaging, #extreme-classification, #python-utilities) {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}
