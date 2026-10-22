@@ -206,3 +206,9 @@ button:focus-visible,
     widows: 3;
   }
 }
+
+#navbar button.dropdown-toggle {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
