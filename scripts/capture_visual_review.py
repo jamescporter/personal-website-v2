@@ -109,6 +109,8 @@ async def capture(browser, entry):
             "horizontal_overflow": await page.evaluate("Math.max(0, document.documentElement.scrollWidth - innerWidth)"),
             "font_faces": await page.evaluate("[...document.fonts].map(font => ({family: font.family, status: font.status}))"),
         }
+        if route == "portfolio/" and record["horizontal_overflow"] > 0:
+            raise RuntimeError(f"Portfolio overflow at {width}px ({theme}): {record['horizontal_overflow']}px")
         print(f"CAPTURED {filename}: {record['document_height']}px, theme={record['theme_rendered']}", flush=True)
         return record
     finally:
@@ -156,7 +158,7 @@ async def main():
             manifest["print_page_count"] = await capture_print(browser)
             if os.environ.get("REVIEW_FULL") == "1":
                 manifest["prints"] = {}
-                for route in ("research/", "publications/", "cv/"):
+                for route in ("research/", "publications/", "cv/", "portfolio/"):
                     for theme in ("light", "dark"):
                         for background in (True, False):
                             key = f"{route}:{theme}:background={background}"
