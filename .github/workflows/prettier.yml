@@ -5,6 +5,7 @@ on:
     branches:
       - master
       - main
+      - fix/responsive-navigation-print
   push:
     branches:
       - master

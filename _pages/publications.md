@@ -11,7 +11,6 @@ nav: false
 <div class="rs-page rs-publications">
   <header class="rs-lead">
     <p class="rs-kicker">Research record</p>
-    <h2>Publications &amp; outputs</h2>
     <p class="rs-standfirst">Verified conference material and research software by James C. Porter. Output types are identified explicitly; a conference abstract and a software record should not be mistaken for peer-reviewed journal research articles.</p>
     <div class="rs-actions">
       <a href="{{ '/research/' | relative_url }}">Research overview <span aria-hidden="true">←</span></a>
