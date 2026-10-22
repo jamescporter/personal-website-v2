@@ -56,7 +56,7 @@ permalink: /
     <div class="jp-section-heading"><div><p class="jp-kicker">02 / Background</p><h2 id="jp-career-heading">Career &amp; academic work</h2></div></div>
     <div class="jp-link-grid">
       <a class="jp-link-card" href="{{ '/cv/' | relative_url }}"><div><span>Background</span><h3>Experience &amp; education</h3><p>Selected roles, qualifications and technical expertise.</p></div><span class="jp-link-arrow" aria-hidden="true">&rarr;</span></a>
-      <a class="jp-link-card" href="{{ '/publications/' | relative_url }}"><div><span>Research outputs</span><h3>Publications</h3><p>Academic publications and related outputs as they become available.</p></div><span class="jp-link-arrow" aria-hidden="true">&rarr;</span></a>
+      <a class="jp-link-card" href="{{ '/publications/' | relative_url }}"><div><span>Research outputs</span><h3>Publications</h3><p>Verified conference research, software and ongoing work.</p></div><span class="jp-link-arrow" aria-hidden="true">&rarr;</span></a>
     </div>
   </section>
 
