@@ -8,6 +8,11 @@ nav: false
 
 Research and professional links for **James C. Porter**. My research interests and technical background are covered in more detail under [Research]({{ '/research/' | relative_url }}) and [Portfolio]({{ '/portfolio/' | relative_url }}).
 
+## Contact
+
+- [University email](mailto:james.c.porter@ed.ac.uk) — academic and research correspondence.
+- [Personal email](mailto:jamesclaxporter@gmail.com) — general enquiries.
+
 ## Academic and professional profiles
 
 - [University of Edinburgh Research Explorer](https://www.research.ed.ac.uk/en/persons/james-c-porter/) — institutional researcher profile and research outputs.
@@ -48,8 +53,3 @@ An **unofficial packaging and deployment contribution** for the pre-existing RET
 - [SCONe](https://clinical-sciences.ed.ac.uk/ophthalmology/scone/about-us) — Scottish Collaborative Optometry-Ophthalmology Network.
 - [Professor Miguel O. Bernabeu](https://edwebprofiles.ed.ac.uk/profile/miguel-o-bernabeu) — PhD supervisor.
 - [Professor Baljean Dhillon](https://edwebprofiles.ed.ac.uk/profile/professor-baljean-dhillon) — PhD supervisor.
-
-## Contact
-
-- [University email](mailto:james.c.porter@ed.ac.uk) — academic and research correspondence.
-- [Personal email](mailto:jamesclaxporter@gmail.com) — general enquiries.

@@ -7,11 +7,8 @@ nav: true
 nav_order: 1
 ---
 
-<link rel="stylesheet" href="{{ '/assets/css/research.css' | relative_url }}">
-
 <div class="rs-page">
   <header class="rs-lead">
-    <p class="rs-kicker">Precision medicine · Retinal imaging · Machine learning</p>
     <h2>Can a retinal photograph tell us something meaningful about brain health?</h2>
     <p class="rs-standfirst">My PhD research investigates whether information in colour photographs of the retina can help estimate retinal structure normally measured by optical coherence tomography (OCT), and how those estimates relate to neurodegenerative disease in population studies.</p>
     <div class="rs-actions">
@@ -21,7 +18,6 @@ nav_order: 1
   </header>
 
   <section class="rs-section" id="research-question">
-    <p class="rs-kicker">01 / Motivation</p>
     <h2>Why retinal imaging?</h2>
     <div class="rs-prose">
       <p>The retina is part of the central nervous system and can be examined non-invasively. OCT measures the thickness of individual retinal layers, while colour fundus photography (CFP) captures a two-dimensional image of the back of the eye. The two techniques provide different kinds of information, and fundus photography is more widely available in many settings.</p>
@@ -30,7 +26,6 @@ nav_order: 1
   </section>
 
   <section class="rs-section" id="research-approach">
-    <p class="rs-kicker">02 / Research programme</p>
     <h2>From retinal images to interpretable evidence</h2>
     <div class="rs-steps">
       <article class="rs-step">
@@ -58,7 +53,6 @@ nav_order: 1
   </section>
 
   <section class="rs-section" id="methods">
-    <p class="rs-kicker">03 / Methods</p>
     <h2>Methods &amp; research practice</h2>
     <div class="rs-methods">
       <div class="rs-method">
@@ -81,7 +75,6 @@ nav_order: 1
   </section>
 
   <section class="rs-section" id="research-outputs">
-    <p class="rs-kicker">04 / Selected outputs</p>
     <h2>Research outputs</h2>
     <div class="rs-output-list">
       <article class="rs-output">

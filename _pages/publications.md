@@ -6,11 +6,8 @@ description: Verified research outputs, conference presentations and research so
 nav: false
 ---
 
-<link rel="stylesheet" href="{{ '/assets/css/research.css' | relative_url }}">
-
 <div class="rs-page rs-publications">
   <header class="rs-lead">
-    <p class="rs-kicker">Research record</p>
     <p class="rs-standfirst">Verified conference material and research software by James C. Porter. Output types are identified explicitly; a conference abstract and a software record should not be mistaken for peer-reviewed journal research articles.</p>
     <div class="rs-actions">
       <a href="{{ '/research/' | relative_url }}">Research overview <span aria-hidden="true">←</span></a>
@@ -20,8 +17,7 @@ nav: false
   </header>
 
   <section class="rs-section" id="meeting-abstract">
-    <p class="rs-kicker">01 / Conference research</p>
-    <h2>Published meeting abstract &amp; poster</h2>
+    <h2>Conference research</h2>
     <article class="rs-publication">
       <span class="rs-output-meta">2025 · ARVO Annual Meeting · Meeting abstract PB0096</span>
       <h3>Prediction of Optical Coherence Tomography Retinal Layer Thickness from Colour Fundus Photography in the UK Biobank</h3>
@@ -38,7 +34,6 @@ nav: false
   </section>
 
   <section class="rs-section" id="research-software">
-    <p class="rs-kicker">02 / Software</p>
     <h2>Research software</h2>
     <article class="rs-publication">
       <span class="rs-output-meta">2026 · Software research output</span>
@@ -56,8 +51,7 @@ nav: false
   </section>
 
   <section class="rs-section" id="work-in-progress">
-    <p class="rs-kicker">03 / Ongoing work</p>
-    <h2>Manuscript in preparation</h2>
+    <h2>Work in preparation</h2>
     <div class="rs-progress">
       <p>Current first-author research examines the anatomical fidelity and neurodegenerative-disease associations of retinal thicknesses estimated from colour fundus photographs in UK Biobank.</p>
       <p><strong>Status:</strong> In preparation. Not published or peer reviewed; no journal acceptance or publication is claimed.</p>

@@ -1,4 +1,350 @@
+/* Shared editorial system. Map into al-folio rather than replacing its features. */
+:root {
+  --global-bg-color: #fff;
+  --global-text-color: #202b32;
+  --global-text-color-light: #5a6975;
+  --global-theme-color: #235c7c;
+  --global-hover-color: #235c7c;
+  --global-hover-text-color: #fff;
+  --global-divider-color: #dce3e7;
+  --global-card-bg-color: #f5f8fa;
+  --global-footer-bg-color: var(--global-bg-color);
+  --global-footer-text-color: var(--global-text-color-light);
+  --global-footer-link-color: var(--global-theme-color);
+  --site-space-1: 4px;
+  --site-space-2: 8px;
+  --site-space-3: 12px;
+  --site-space-4: 16px;
+  --site-space-5: 24px;
+  --site-space-6: 32px;
+  --site-space-7: 48px;
+  --site-space-8: 64px;
+}
+html[data-theme="dark"] {
+  --global-bg-color: #1c1c1d;
+  --global-text-color: #e8e8e8;
+  --global-text-color-light: #b4c0c9;
+  --global-theme-color: #9bc9e6;
+  --global-hover-color: #9bc9e6;
+  --global-hover-text-color: #102733;
+  --global-divider-color: #3c4a54;
+  --global-card-bg-color: #202a32;
+  --global-footer-bg-color: var(--global-bg-color);
+  --global-footer-text-color: var(--global-text-color-light);
+  --global-footer-link-color: var(--global-theme-color);
+}
+body {
+  font-family: Roboto, system-ui, sans-serif;
+  font-size: 1.0625rem;
+  font-weight: 400;
+  line-height: 1.65;
+}
+.container {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 960px;
+  padding-inline: 24px;
+}
+#main-content {
+  margin-bottom: var(--site-space-7);
+}
+#main-content :is(h1, h2, h3) {
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: var(--site-space-4);
+  line-height: 1.2;
+}
+#main-content h1 {
+  font-size: 2.5rem;
+}
+#main-content h2 {
+  font-size: 1.75rem;
+}
+#main-content h3 {
+  font-size: 1.25rem;
+}
+#main-content p {
+  max-width: 68ch;
+  margin-bottom: var(--site-space-4);
+}
+#main-content a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+/* Upstream assigns element colours directly: restore inheritance within text. */
+#main-content :is(p, li, h1, h2, h3, a) :is(span, strong, em) {
+  color: inherit;
+}
+#main-content .post-description,
+.site-meta,
+#main-content .rs-output-meta,
+#main-content .xp-date,
+#main-content .xp-organisation {
+  color: var(--global-text-color-light);
+  font-size: 0.9375rem;
+  font-weight: 500;
+}
+#main-content .site-meta {
+  margin-bottom: var(--site-space-2);
+}
+#main-content .post-header {
+  margin-bottom: var(--site-space-6);
+}
+#main-content .post > article > h2 {
+  margin-top: var(--site-space-7);
+}
+#main-content .post > article > h3 {
+  margin-top: var(--site-space-6);
+}
+#main-content li {
+  margin-bottom: var(--site-space-2);
+}
+#navbar :is(.nav-link, .navbar-brand) {
+  font-weight: 500;
+}
+#navbar .nav-link {
+  font-size: 0.9375rem;
+}
+#navbar .navbar-brand {
+  font-size: 1.0625rem;
+  margin-right: var(--site-space-5);
+}
+#navbar .nav-link,
+#navbar .dropdown-item {
+  display: flex;
+  align-items: center;
+}
+#navbar .dropdown-item:is(:hover, :focus-visible, .active) {
+  background: var(--global-hover-color);
+  color: var(--global-hover-text-color) !important;
+}
+#navbar .dropdown-item span {
+  color: inherit;
+}
+body > footer[role="contentinfo"] {
+  background: var(--global-footer-bg-color);
+  color: var(--global-footer-text-color);
+  padding-block: var(--site-space-6);
+  font-size: 0.9375rem;
+}
+body > footer[role="contentinfo"] :is(.container, span) {
+  color: inherit;
+}
+body > footer[role="contentinfo"] a {
+  color: var(--global-footer-link-color);
+  text-decoration: underline;
+}
+.site-actions,
+.rs-actions,
+.rs-resource-links,
+.xp-quicklinks,
+.xp-output-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--site-space-3) var(--site-space-5);
+  margin-block: var(--site-space-4);
+}
+#main-content :is(.site-actions, .rs-actions, .rs-resource-links, .xp-quicklinks, .xp-output-links) a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  gap: var(--site-space-2);
+}
+#main-content :is(.site-primary, .rs-primary-link) {
+  min-height: 44px;
+  border: 1px solid var(--global-theme-color);
+  border-radius: 6px;
+  padding: 8px 16px;
+  background: var(--global-theme-color);
+  color: var(--global-hover-text-color);
+  text-decoration: none;
+}
+#main-content :is(.site-primary, .rs-primary-link):hover {
+  text-decoration: underline;
+}
+#main-content :is(.site-primary, .rs-primary-link) span {
+  color: inherit;
+}
+:is(button, .btn):disabled,
+[aria-disabled="true"] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.site-section,
+.rs-section,
+.xp-section {
+  margin-top: var(--site-space-7);
+  scroll-margin-top: 96px;
+}
+.site-record,
+.rs-output,
+.rs-publication,
+.xp-output {
+  border-top: 1px solid var(--global-divider-color);
+  padding-block: var(--site-space-5);
+}
+#main-content .jp-home h1 {
+  font-size: 3.25rem;
+  line-height: 1.12;
+}
+.jp-lead {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+.site-capabilities,
+.site-profile-links {
+  color: var(--global-text-color-light);
+}
+.site-profile-links {
+  font-size: 0.9375rem;
+}
+.jp-personal {
+  border-top: 1px solid var(--global-divider-color);
+  padding-top: var(--site-space-6);
+}
+.rs-lead {
+  border-bottom: 1px solid var(--global-divider-color);
+  padding-bottom: var(--site-space-5);
+}
+.rs-steps,
+.xp-timeline {
+  border-top: 1px solid var(--global-divider-color);
+}
+.rs-step {
+  display: grid;
+  grid-template-columns: 3rem minmax(0, 1fr);
+  gap: var(--site-space-4);
+  padding-block: var(--site-space-5);
+  border-bottom: 1px solid var(--global-divider-color);
+}
+.rs-step-number {
+  color: var(--global-theme-color);
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+.rs-methods,
+.xp-skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--site-space-4);
+}
+.rs-method,
+.xp-skill {
+  background: var(--global-card-bg-color);
+  border-radius: 6px;
+  padding: 20px;
+}
+#main-content :is(.rs-method, .xp-skill) p:last-child {
+  margin-bottom: 0;
+}
+.rs-note,
+.rs-progress {
+  background: var(--global-card-bg-color);
+  border-left: 3px solid var(--global-theme-color);
+  padding: 20px;
+  margin-top: var(--site-space-7);
+}
+.rs-progress {
+  margin-top: 0;
+}
+.rs-note strong {
+  display: block;
+  margin-bottom: var(--site-space-2);
+}
+.rs-footer,
+.xp-footer {
+  border-top: 1px solid var(--global-divider-color);
+  margin-top: var(--site-space-7);
+  padding-top: var(--site-space-5);
+}
+#main-content :is(.rs-footer, .xp-footer) p {
+  color: var(--global-text-color-light);
+  font-size: 0.9375rem;
+}
+.xp-jump {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--site-space-3) var(--site-space-5);
+  border-block: 1px solid var(--global-divider-color);
+  padding-block: var(--site-space-3);
+}
+.xp-jump a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+}
+.xp-role {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr);
+  gap: var(--site-space-6);
+  padding-block: var(--site-space-5);
+  border-bottom: 1px solid var(--global-divider-color);
+}
+#main-content .xp-role :is(p, li) {
+  max-width: 68ch;
+}
+#main-content :is(.xp-role-type, .xp-qualifier) {
+  display: inline-block;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--global-text-color-light);
+}
+.xp-education-card {
+  border-top: 1px solid var(--global-divider-color);
+  padding-block: var(--site-space-5);
+}
+@media (max-width: 959.98px) {
+  #main-content {
+    margin-top: var(--site-space-6) !important;
+  }
+}
+@media (max-width: 720px) {
+  .container {
+    padding-inline: 20px;
+  }
+  #main-content h1 {
+    font-size: 2rem;
+  }
+  #main-content h2 {
+    font-size: 1.5rem;
+  }
+  #main-content .jp-home h1 {
+    font-size: 2.25rem;
+  }
+  .site-section,
+  .rs-section,
+  .xp-section {
+    margin-top: var(--site-space-6);
+  }
+  .rs-methods,
+  .xp-skills-grid {
+    grid-template-columns: 1fr;
+  }
+  .xp-role {
+    grid-template-columns: 1fr;
+    gap: var(--site-space-2);
+  }
+  .rs-step {
+    grid-template-columns: 2rem minmax(0, 1fr);
+    gap: var(--site-space-3);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  #navbar .icon-bar {
+    transition: none;
+  }
+}
+
 /* Site-specific layout repairs; al-folio retains navigation and theme behaviour. */
+/* common.js adds a fixed-navbar offset even for an in-flow header. */
 body.sticky-bottom-footer {
   padding-top: 0 !important;
 }
@@ -144,10 +490,6 @@ button:focus-visible,
     max-width: none;
     width: 100%;
   }
-  ninja-keys,
-  #back-to-top {
-    display: none !important;
-  }
   #main-content p {
     max-width: none;
   }
@@ -203,12 +545,36 @@ button:focus-visible,
   #main-content a span {
     color: #235c7c !important;
   }
+  #main-content :is(.site-primary, .rs-primary-link) {
+    background: #fff !important;
+    color: #235c7c;
+  }
   #main-content .jp-button-primary {
     background: #fff;
   }
   p {
     orphans: 3;
     widows: 3;
+  }
+}
+
+/* Search is a web component; use its supported theme variables and parts. */
+ninja-keys {
+  --ninja-accent-color: var(--global-theme-color);
+  --ninja-modal-background: var(--global-bg-color);
+  --ninja-text-color: var(--global-text-color);
+  --ninja-selected-background: var(--global-theme-color);
+  --ninja-selected-text-color: var(--global-hover-text-color);
+  --ninja-secondary-background-color: var(--global-card-bg-color);
+  --ninja-secondary-text-color: var(--global-text-color-light);
+}
+ninja-keys::part(ninja-input) {
+  color: var(--global-text-color);
+}
+@media print {
+  ninja-keys,
+  #back-to-top {
+    display: none !important;
   }
 }
 
@@ -224,4 +590,8 @@ button:focus-visible,
 }
 #navbar .navbar-menu-list {
   gap: 4px;
+}
+/* Highlighted search matches must contrast with the selected accent fill. */
+ninja-keys::part(ninja-selected) {
+  --ninja-accent-color: var(--global-hover-text-color);
 }
