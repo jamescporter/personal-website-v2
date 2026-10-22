@@ -35,6 +35,7 @@ jobs:
           BASE_SHA: ${{ github.event.pull_request.base.sha }}
         run: |
           git worktree add /tmp/review-base "$BASE_SHA"
+          mkdir -p /tmp/review-before/personal-website-v2
           bundle exec jekyll build --source /tmp/review-base --destination /tmp/review-before/personal-website-v2
           python -m http.server 4001 --directory /tmp/review-before > /tmp/review-before.log 2>&1 &
           REVIEW_BASE_URL=http://127.0.0.1:4001/personal-website-v2/ REVIEW_OUT=visual-review/before REVIEW_COMMIT="$BASE_SHA" python scripts/capture_visual_review.py
@@ -42,6 +43,7 @@ jobs:
         env:
           REVIEW_COMMIT: ${{ github.event.pull_request.head.sha || github.sha }}
         run: |
+          mkdir -p /tmp/review-after/personal-website-v2
           bundle exec jekyll build --destination /tmp/review-after/personal-website-v2
           python -m http.server 4002 --directory /tmp/review-after > /tmp/review-after.log 2>&1 &
           REVIEW_BASE_URL=http://127.0.0.1:4002/personal-website-v2/ REVIEW_OUT=visual-review/after REVIEW_FULL=1 python scripts/capture_visual_review.py
