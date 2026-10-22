@@ -36,7 +36,9 @@ body.sticky-bottom-footer {
   display: none;
 }
 #navbar .navbar-collapse-main {
-  flex: 1 1 auto;
+  flex: 1 1 0;
+  min-width: 0;
+  width: auto;
   display: flex;
   visibility: visible;
 }
@@ -114,6 +116,8 @@ button:focus-visible,
 @media print {
   html,
   html[data-theme="dark"] {
+    background: #fff !important;
+    color-scheme: light;
     --global-bg-color: #fff;
     --global-text-color: #202b32;
     --global-text-color-light: #202b32;
