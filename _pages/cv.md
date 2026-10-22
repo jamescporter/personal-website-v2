@@ -7,13 +7,9 @@ nav: true
 nav_order: 4
 ---
 
-<link rel="stylesheet" href="{{ '/assets/css/experience.css' | relative_url }}">
-
 <div class="xp-profile">
   <section class="xp-intro" aria-label="Professional overview">
     <div>
-      <p class="xp-eyebrow">Professional background</p>
-      <h2>Research at the intersection of medical imaging and machine learning.</h2>
       <p class="xp-summary">I am an MRC-funded PhD researcher at the University of Edinburgh's Usher Institute, with a background in computer science, artificial intelligence and applied data science. My work focuses on evaluating retinal imaging biomarkers of neurodegenerative disease using machine learning and longitudinal health data.</p>
       <div class="xp-quicklinks">
         <a href="{{ '/research/' | relative_url }}">Research <span aria-hidden="true">→</span></a>
@@ -21,13 +17,6 @@ nav_order: 4
         <a href="{{ '/links/' | relative_url }}">Profiles &amp; contact <span aria-hidden="true">→</span></a>
       </div>
     </div>
-    <aside class="xp-context" aria-label="Current work">
-      <p class="xp-context-title">Currently</p>
-      <strong>PhD researcher</strong>
-      <span>Centre for Medical Informatics</span>
-      <span>Usher Institute, University of Edinburgh</span>
-      <span>MRC Precision Medicine CDT</span>
-    </aside>
   </section>
 
   <nav class="xp-jump" aria-label="On this page">
@@ -40,7 +29,6 @@ nav_order: 4
 
   <section class="xp-section" id="professional-experience" aria-labelledby="xp-experience-title">
     <div class="xp-section-heading">
-      <p class="xp-eyebrow">01 / Work</p>
       <h2 id="xp-experience-title">Research &amp; professional experience</h2>
     </div>
     <div class="xp-timeline">
@@ -56,15 +44,6 @@ nav_order: 4
             <li>Use participant-level data separation, survival analysis, cross-fitting, bootstrap inference and sensitivity analyses to evaluate model performance and interpretation.</li>
           </ul>
           <p class="xp-detail">MRC-funded Precision Medicine CDT; research affiliation with <a href="https://clinical-sciences.ed.ac.uk/ophthalmology/scone/about-us">SCONe</a>.</p>
-        </div>
-      </article>
-
-      <article class="xp-role">
-        <p class="xp-date">2017–2018</p>
-        <div>
-          <h3>Research and Development Engineer <span class="xp-role-type">Industry</span></h3>
-          <p class="xp-organisation">bet365 · Stoke-on-Trent</p>
-          <p>Undertook quantitative research and development work in an industry setting, applying analytical and programming skills to complex problems and communicating technical findings to colleagues with different backgrounds.</p>
         </div>
       </article>
 
@@ -85,13 +64,21 @@ nav_order: 4
           <p>Provided individual tuition from GCSE to undergraduate level, adapting technical explanations to different levels of experience.</p>
         </div>
       </article>
+
+      <article class="xp-role">
+        <p class="xp-date">2017–2018</p>
+        <div>
+          <h3>Research and Development Engineer <span class="xp-role-type">Industry</span></h3>
+          <p class="xp-organisation">bet365 · Stoke-on-Trent</p>
+          <p>Undertook quantitative research and development work in an industry setting, applying analytical and programming skills to complex problems and communicating technical findings to colleagues with different backgrounds.</p>
+        </div>
+      </article>
     </div>
 
   </section>
 
   <section class="xp-section" id="education" aria-labelledby="xp-education-title">
     <div class="xp-section-heading">
-      <p class="xp-eyebrow">02 / Qualifications</p>
       <h2 id="xp-education-title">Education</h2>
     </div>
     <div class="xp-education-grid">
@@ -118,7 +105,6 @@ nav_order: 4
 
   <section class="xp-section" id="technical-expertise" aria-labelledby="xp-skills-title">
     <div class="xp-section-heading">
-      <p class="xp-eyebrow">03 / Methods</p>
       <h2 id="xp-skills-title">Technical expertise</h2>
     </div>
     <div class="xp-skills-grid">
@@ -143,7 +129,6 @@ nav_order: 4
 
   <section class="xp-section" id="selected-outputs" aria-labelledby="xp-outputs-title">
     <div class="xp-section-heading">
-      <p class="xp-eyebrow">04 / Work samples</p>
       <h2 id="xp-outputs-title">Selected research outputs &amp; software</h2>
     </div>
     <div class="xp-outputs">
@@ -169,7 +154,6 @@ nav_order: 4
 
   <section class="xp-section" id="recognition" aria-labelledby="xp-recognition-title">
     <div class="xp-section-heading">
-      <p class="xp-eyebrow">05 / Beyond research</p>
       <h2 id="xp-recognition-title">Teaching, leadership &amp; recognition</h2>
     </div>
     <ul class="xp-recognition-list">
