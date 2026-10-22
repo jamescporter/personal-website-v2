@@ -2,14 +2,15 @@
 
 import asyncio
 import json
+import os
 from datetime import datetime, timezone
 from pathlib import Path
 
 import fitz
 from playwright.async_api import async_playwright, TimeoutError as PlaywrightTimeout
 
-BASE_URL = "https://jamescporter.github.io/personal-website-v2/"
-OUT = Path("visual-review")
+BASE_URL = os.environ.get("REVIEW_BASE_URL", "https://jamescporter.github.io/personal-website-v2/").rstrip("/") + "/"
+OUT = Path(os.environ.get("REVIEW_OUT", "visual-review"))
 
 CAPTURES = [
     ("01_home_desktop_light.png", "", "light", 1440, 900, False, False),
@@ -23,6 +24,15 @@ CAPTURES = [
     ("09_home_mobile_menu_open.png", "", "light", 390, 844, True, True),
     ("10_links_desktop_light.png", "links/", "light", 1440, 900, False, False),
 ]
+
+if os.environ.get("REVIEW_FULL") == "1":
+    for route in ("", "research/", "publications/", "cv/", "portfolio/", "links/"):
+        for theme in ("light", "dark"):
+            for width in (320, 390, 719, 720, 721, 768, 959, 960, 961, 1440):
+                CAPTURES.append((f"{route.strip('/') or 'home'}_{width}_{theme}.png", route, theme, width, 844 if width < 960 else 900, width < 960, False))
+    for theme in ("light", "dark"):
+        for width, height in ((390, 844), (768, 390), (959, 844)):
+            CAPTURES.append((f"menu_{width}_{height}_{theme}.png", "", theme, width, height, True, True))
 
 EXPECTED = {
     "": ".jp-home",
@@ -101,23 +111,24 @@ async def capture(browser, entry):
         await context.close()
 
 
-async def capture_print(browser):
-    context, page = await load_page(browser, "research/", "light", 1440, 900, False)
+async def capture_print(browser, route="research/", theme="light", background=True):
+    context, page = await load_page(browser, route, theme, 1440, 900, False)
     try:
         await page.emulate_media(media="print")
-        pdf_path = OUT / "11_research_print_a4.pdf"
+        stem = "11_research_print" if (route, theme, background) == ("research/", "light", True) else f"{route.strip('/')}_{theme}_bg{int(background)}_print"
+        pdf_path = OUT / f"{stem}_a4.pdf"
         await page.pdf(
             path=str(pdf_path),
             format="A4",
-            print_background=True,
+            print_background=background,
             display_header_footer=False,
-            prefer_css_page_size=False,
+            prefer_css_page_size=True,
         )
         document = fitz.open(pdf_path)
         number = len(document)
         for index in range(number):
             pixmap = document[index].get_pixmap(matrix=fitz.Matrix(1.4, 1.4), alpha=False)
-            pixmap.save(str(OUT / f"11_research_print_page_{index + 1:02d}.png"))
+            pixmap.save(str(OUT / f"{stem}_page_{index + 1:02d}.png"))
         document.close()
         print(f"PRINTED {pdf_path.name}: {number} pages", flush=True)
         return number
@@ -127,7 +138,7 @@ async def capture_print(browser):
 
 async def main():
     OUT.mkdir(parents=True, exist_ok=True)
-    manifest = {"captured_utc": datetime.now(timezone.utc).isoformat(), "base_url": BASE_URL, "captures": []}
+    manifest = {"captured_utc": datetime.now(timezone.utc).isoformat(), "base_url": BASE_URL, "commit": os.environ.get("REVIEW_COMMIT"), "captures": []}
     async with async_playwright() as playwright:
         browser = await playwright.chromium.launch(headless=True)
         try:
@@ -135,6 +146,13 @@ async def main():
             for entry in CAPTURES:
                 manifest["captures"].append(await capture(browser, entry))
             manifest["print_page_count"] = await capture_print(browser)
+            if os.environ.get("REVIEW_FULL") == "1":
+                manifest["prints"] = {}
+                for route in ("research/", "publications/", "cv/"):
+                    for theme in ("light", "dark"):
+                        for background in (True, False):
+                            key = f"{route}:{theme}:background={background}"
+                            manifest["prints"][key] = await capture_print(browser, route, theme, background)
         finally:
             await browser.close()
 

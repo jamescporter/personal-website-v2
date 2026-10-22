@@ -1,12 +1,7 @@
 name: Capture website visual review
 
 on:
-  push:
-    branches:
-      - review/automated-visual-captures
-    paths:
-      - ".github/workflows/capture-visual-review.yml"
-      - "scripts/capture_visual_review.py"
+  pull_request:
   workflow_dispatch:
 
 permissions:
@@ -15,10 +10,17 @@ permissions:
 jobs:
   capture:
     runs-on: ubuntu-24.04
-    timeout-minutes: 20
+    timeout-minutes: 35
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
@@ -27,9 +29,23 @@ jobs:
         run: |
           python -m pip install playwright pymupdf
           python -m playwright install --with-deps chromium
-      - name: Capture live site at desktop/mobile and print sizes
-        run: python scripts/capture_visual_review.py
-      - name: Upload images and printable PDF
+      - name: Build and capture PR base
+        if: github.event_name == 'pull_request'
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: |
+          git worktree add /tmp/review-base "$BASE_SHA"
+          bundle exec jekyll build --source /tmp/review-base --destination /tmp/review-before/personal-website-v2
+          python -m http.server 4001 --directory /tmp/review-before > /tmp/review-before.log 2>&1 &
+          REVIEW_BASE_URL=http://127.0.0.1:4001/personal-website-v2/ REVIEW_OUT=visual-review/before REVIEW_COMMIT="$BASE_SHA" python scripts/capture_visual_review.py
+      - name: Build and capture proposed site
+        env:
+          REVIEW_COMMIT: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          bundle exec jekyll build --destination /tmp/review-after/personal-website-v2
+          python -m http.server 4002 --directory /tmp/review-after > /tmp/review-after.log 2>&1 &
+          REVIEW_BASE_URL=http://127.0.0.1:4002/personal-website-v2/ REVIEW_OUT=visual-review/after REVIEW_FULL=1 python scripts/capture_visual_review.py
+      - name: Upload images and printable PDFs
         if: always()
         uses: actions/upload-artifact@v4
         with:
