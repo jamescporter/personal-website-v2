@@ -382,6 +382,7 @@ body.sticky-bottom-footer {
   display: none;
 }
 #navbar .navbar-collapse-main {
+  flex: 1 1 auto;
   display: flex;
   visibility: visible;
 }
