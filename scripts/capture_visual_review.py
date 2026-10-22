@@ -44,6 +44,7 @@ EXPECTED = {
 async def load_page(browser, route, theme, width, height, mobile):
     context = await browser.new_context(
         viewport={"width": width, "height": height},
+        ignore_https_errors=os.environ.get("REVIEW_IGNORE_HTTPS_ERRORS") == "1",
         device_scale_factor=1,
         color_scheme=theme,
         is_mobile=mobile,
@@ -104,6 +105,9 @@ async def capture(browser, entry):
             "mobile": mobile,
             "menu_open": menu,
             "document_height": await page.evaluate("document.documentElement.scrollHeight"),
+            "h1_count": await page.locator("h1").count(),
+            "horizontal_overflow": await page.evaluate("Math.max(0, document.documentElement.scrollWidth - innerWidth)"),
+            "font_faces": await page.evaluate("[...document.fonts].map(font => ({family: font.family, status: font.status}))"),
         }
         print(f"CAPTURED {filename}: {record['document_height']}px, theme={record['theme_rendered']}", flush=True)
         return record
@@ -140,11 +144,15 @@ async def main():
     OUT.mkdir(parents=True, exist_ok=True)
     manifest = {"captured_utc": datetime.now(timezone.utc).isoformat(), "base_url": BASE_URL, "commit": os.environ.get("REVIEW_COMMIT"), "captures": []}
     async with async_playwright() as playwright:
-        browser = await playwright.chromium.launch(headless=True)
+        proxy = {"server": os.environ["REVIEW_PROXY"], "bypass": "127.0.0.1,localhost"} if os.environ.get("REVIEW_PROXY") else None
+        browser = await playwright.chromium.launch(headless=True, proxy=proxy)
         try:
             manifest["browser_version"] = browser.version
-            for entry in CAPTURES:
-                manifest["captures"].append(await capture(browser, entry))
+            semaphore = asyncio.Semaphore(4)
+            async def bounded_capture(entry):
+                async with semaphore:
+                    return await capture(browser, entry)
+            manifest["captures"] = await asyncio.gather(*(bounded_capture(entry) for entry in CAPTURES))
             manifest["print_page_count"] = await capture_print(browser)
             if os.environ.get("REVIEW_FULL") == "1":
                 manifest["prints"] = {}

@@ -1,10 +1,14 @@
 /* Site-specific layout repairs; al-folio retains navigation and theme behaviour. */
+body.sticky-bottom-footer {
+  padding-top: 0 !important;
+}
 .site-header {
   position: sticky;
   top: 0;
   z-index: 1030;
 }
 .site-header #navbar {
+  padding-block: 0;
   position: static;
   opacity: 1;
   background: var(--global-bg-color);
@@ -134,6 +138,13 @@ button:focus-visible,
     padding: 0;
     max-width: none;
     width: 100%;
+  }
+  ninja-keys,
+  #back-to-top {
+    display: none !important;
+  }
+  #main-content p {
+    max-width: none;
   }
   #main-content .post-header {
     margin-bottom: 16pt;
