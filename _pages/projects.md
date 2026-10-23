@@ -56,20 +56,6 @@ My portfolio focuses on **problems I have worked on, methods I have implemented 
   </article>
 </section>
 
-<section class="site-section" id="python-utilities" aria-labelledby="utilities-project">
-  <article class="site-record">
-    <p class="site-meta">Open-source contribution · Statistical Python utility</p>
-    <h2 id="utilities-project">Practical descriptive statistics with Python</h2>
-    <p><strong>Use case:</strong> During exploratory analysis, compact statistical summaries help identify unusual distributions and compare numerical columns.</p>
-    <p><strong>Contribution:</strong> My public <code>super_describe_jcp</code> repository is a <strong>fork</strong> of <code>faseycranco/super_describe</code>, which provides a helper to summarise numeric columns of pandas DataFrames with measures such as mean, median, variation, skewness and kurtosis. This is a fork rather than wholly original research software.</p>
-    <p><strong>Technical focus:</strong> Python, pandas and exploratory data analysis.</p>
-    <div class="site-actions">
-      <a href="https://github.com/jamescporter/super_describe_jcp">My public fork</a>
-      <a href="https://github.com/faseycranco/super_describe">Upstream project</a>
-    </div>
-  </article>
-</section>
-
 <section class="site-section" aria-labelledby="more-professional-work">
   <h2 id="more-professional-work">More research and technical work</h2>
   <p>For verified research outputs, software records and additional public profiles, see <a href="{{ '/publications/' | relative_url }}">Publications</a> and <a href="{{ '/links/' | relative_url }}">Links &amp; Profiles</a>. A full recruitment CV and restricted or unpublished research code are not hosted here.</p>
