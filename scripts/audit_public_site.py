@@ -29,7 +29,7 @@ class MetaParser(HTMLParser):
 
 def check(root: Path) -> None:
     origin = "https://jamescporter.github.io/personal-website-v2"
-    required = ("", "about", "cv", "research", "publications", "portfolio", "links")
+    required = ("", "about", "cv", "research", "publications", "portfolio", "links", "personal")
     for page in required:
         output = root / page / "index.html" if page else root / "index.html"
         assert output.is_file(), f"Missing required public page: {output}"
@@ -57,7 +57,7 @@ def check(root: Path) -> None:
     for page in required:
         url = f"{origin}/{page}/" if page else f"{origin}/"
         assert url in urls, f"Missing canonical page from sitemap: {url}"
-    for page in ("_pages/dropdown", "writing", "personal", "people", "teaching", "books"):
+    for page in ("_pages/dropdown", "writing", "people", "teaching", "books"):
         url = f"{origin}/{page}/"
         assert url not in urls, f"Non-public/demo URL remains in sitemap: {url}"
 
@@ -71,9 +71,10 @@ def check(root: Path) -> None:
 
     writing = root / "writing" / "index.html"
     personal = root / "personal" / "index.html"
-    assert writing.is_file() and personal.is_file(), "Deferred routes should remain usable"
+    assert writing.is_file() and personal.is_file(), "Writing and Personal routes should remain usable"
     assert "No public articles are currently listed here" in writing.read_text(encoding="utf-8")
-    assert "No projects are currently listed here" in personal.read_text(encoding="utf-8")
+    assert "Personal projects will be added here" in personal.read_text(encoding="utf-8")
+    assert '<a href="/personal-website-v2/personal/"' in home, "Homepage should link to Personal projects"
     print(f"Public site audit passed: {len(required)} canonical routes, OG metadata, clean sitemap and no starter CV data.")
 
 
