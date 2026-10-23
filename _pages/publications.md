@@ -29,6 +29,27 @@ nav: false
         <a href="https://www.research.ed.ac.uk/en/publications/prediction-of-optical-coherence-tomography-retinal-layer-thicknes/">University record <span aria-hidden="true">↗</span></a>
         <a href="https://doi.org/10.7488/era/7462">Archive DOI <span aria-hidden="true">↗</span></a>
         <a href="https://era.ed.ac.uk/handle/1842/44947">Poster &amp; archived materials <span aria-hidden="true">↗</span></a>
+        <a href="{{ '/assets/pdf/arvo-2025-poster.pdf' | relative_url }}">Poster PDF <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="rs-arvo-gallery" aria-label="Photographs and memorabilia from ARVO 2025">
+        <figure class="rs-arvo-photo">
+          <img
+            src="{{ '/assets/img/arvo-presenting-2025.jpg' | relative_url }}"
+            alt="Research presentation at the ARVO 2025 conference"
+            loading="eager"
+            decoding="async"
+          >
+          <figcaption>Presenting research at ARVO 2025.</figcaption>
+        </figure>
+        <figure class="rs-arvo-badge">
+          <img
+            src="{{ '/assets/img/arvo-badge-2025.png' | relative_url }}"
+            alt="ARVO 2025 badge"
+            loading="eager"
+            decoding="async"
+          >
+          <figcaption>ARVO 2025.</figcaption>
+        </figure>
       </div>
     </article>
   </section>
