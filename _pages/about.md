@@ -34,6 +34,7 @@ permalink: /
       <p>A pip-installable distribution of existing RETFound software for restricted research environments. The foundation model and original research belong to the upstream authors.</p>
       <a href="{{ '/publications/#research-software' | relative_url }}">Software record and source <span aria-hidden="true">→</span></a>
     </article>
+    <p><a href="{{ '/portfolio/' | relative_url }}">Explore the professional portfolio <span aria-hidden="true">→</span></a></p>
   </section>
 
   <section class="site-section" aria-labelledby="background">

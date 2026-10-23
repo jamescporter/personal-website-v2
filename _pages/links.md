@@ -43,10 +43,10 @@ An **unofficial packaging and deployment contribution** for the pre-existing RET
 
 ## Software and development
 
+Selected work and contributions are described on the [Professional Portfolio]({{ '/portfolio/' | relative_url }}) page.
+
 - [RETFound — unofficial Python package](https://pypi.org/project/retfound-unofficial/) — installable distribution for use in secure research environments ([source repository](https://github.com/jamescporter/Unofficial_RETFound_pip)).
-- [MSc MACH implementation](https://github.com/jamescporter/MSC_MACH-implementation) — experiments implementing merged-averaged classifiers via hashing for extreme classification.
-- [super_describe_jcp](https://github.com/jamescporter/super_describe_jcp) — fork with an extended descriptive-statistics utility for pandas DataFrames.
-- [AlzPy_jcp](https://github.com/jamescporter/AlzPy_jcp) — fork of clinical data-cleaning and statistical-analysis utilities.
+- [MSc research in extreme classification]({{ '/portfolio/#extreme-classification' | relative_url }}) — dissertation case study on memory-efficient classification (no public code repository currently linked).
 
 ## Research network
 
