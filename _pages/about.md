@@ -6,6 +6,7 @@ permalink: /
 
 <div class="jp-home">
   <section class="jp-hero" aria-labelledby="jp-name">
+    <div class="jp-hero-copy">
     <h1 id="jp-name">James C. Porter</h1>
     <p class="site-meta">PhD researcher · MRC Precision Medicine CDT · University of Edinburgh</p>
     <p class="jp-lead">Retinal imaging, machine learning and precision medicine.</p>
@@ -18,6 +19,17 @@ permalink: /
       <a href="mailto:james.c.porter@ed.ac.uk">Contact</a>
     </div>
     <p class="site-profile-links"><a href="https://github.com/{{ site.data.socials.github_username }}">GitHub</a> · <a href="https://www.linkedin.com/in/{{ site.data.socials.linkedin_username }}">LinkedIn</a> · <a href="https://orcid.org/{{ site.data.socials.orcid_id }}">ORCID</a> · <a href="{{ '/links/' | relative_url }}">All links &amp; profiles</a></p>
+    </div>
+    <figure class="jp-portrait">
+      <img
+        src="{{ '/assets/img/james-c-porter-portrait.webp' | relative_url }}"
+        width="400"
+        height="447"
+        alt="Black-and-white head-and-shoulders portrait of the site author wearing glasses"
+        loading="eager"
+        decoding="async"
+      >
+    </figure>
   </section>
 
   <section class="site-section" aria-labelledby="selected-work">
