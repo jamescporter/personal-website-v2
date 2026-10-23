@@ -589,3 +589,43 @@ ninja-keys::part(ninja-selected) {
     page-break-inside: avoid;
   }
 }
+
+/* Homepage portrait: use the author's original photograph, not a theme sample. */
+.jp-home .jp-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 218px;
+  align-items: start;
+  gap: clamp(1.25rem, 3.5vw, 2.5rem);
+}
+.jp-home .jp-hero-copy {
+  min-width: 0;
+}
+.jp-home .jp-portrait {
+  width: 100%;
+  max-width: 218px;
+  margin: 0;
+  justify-self: end;
+}
+.jp-home .jp-portrait img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 400 / 447;
+  border-radius: 6px;
+}
+@media (max-width: 720px) {
+  .jp-home .jp-hero {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.25rem;
+  }
+  .jp-home .jp-portrait {
+    grid-row: 1;
+    justify-self: start;
+    width: min(40vw, 154px);
+  }
+}
+@media print {
+  .jp-home .jp-portrait {
+    display: none;
+  }
+}

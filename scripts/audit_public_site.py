@@ -15,6 +15,7 @@ class MetaParser(HTMLParser):
         super().__init__()
         self.properties: dict[str, str] = {}
         self.canonicals: list[str] = []
+        self.images: list[dict[str, str | None]] = []
 
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
         values = dict(attrs)
@@ -22,6 +23,8 @@ class MetaParser(HTMLParser):
             self.properties[values["property"]] = values.get("content", "") or ""
         elif tag == "link" and values.get("rel") == "canonical":
             self.canonicals.append(values.get("href", "") or "")
+        elif tag == "img":
+            self.images.append(values)
 
 
 def check(root: Path) -> None:
@@ -37,6 +40,15 @@ def check(root: Path) -> None:
     assert parsed.properties.get("og:title"), "Missing Open Graph title"
     assert parsed.properties.get("og:description"), "Missing Open Graph description"
     assert f"{origin}/" in parsed.canonicals, "Incorrect homepage canonical URL"
+    portrait = root / "assets" / "img" / "james-c-porter-portrait.webp"
+    assert portrait.is_file(), "Author's homepage portrait was not published"
+    assert 0 < portrait.stat().st_size < 80_000, "Homepage portrait is missing or oversized"
+    assert any(
+        "james-c-porter-portrait.webp" in (image.get("src") or "")
+        and "portrait" in (image.get("alt") or "").lower()
+        for image in parsed.images
+    ), "Homepage image missing accessible alt text or correct source"
+
 
     sitemap = root / "sitemap.xml"
     assert sitemap.is_file(), "Missing sitemap.xml"
