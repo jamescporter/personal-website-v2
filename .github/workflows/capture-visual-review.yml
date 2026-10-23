@@ -47,6 +47,8 @@ jobs:
           bundle exec jekyll build --destination /tmp/review-after/personal-website-v2
           python -m http.server 4002 --directory /tmp/review-after > /tmp/review-after.log 2>&1 &
           REVIEW_BASE_URL=http://127.0.0.1:4002/personal-website-v2/ REVIEW_OUT=visual-review/after REVIEW_FULL=1 python scripts/capture_visual_review.py
+      - name: Audit generated website content and metadata
+        run: python scripts/audit_public_site.py /tmp/review-after/personal-website-v2
       - name: Upload images and printable PDFs
         if: always()
         uses: actions/upload-artifact@v4
