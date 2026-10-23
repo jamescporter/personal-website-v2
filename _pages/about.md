@@ -55,4 +55,10 @@ permalink: /
     <a href="{{ '/cv/' | relative_url }}">Experience, education and technical expertise <span aria-hidden="true">→</span></a>
   </section>
 
+  <section class="site-section jp-personal" aria-labelledby="personal-work">
+    <h2 id="personal-work">Personal projects</h2>
+    <p>Independent software, game modifications, custom maps and other creative interests have a separate space from my academic and professional work.</p>
+    <a href="{{ '/personal/' | relative_url }}">Explore personal projects <span aria-hidden="true">→</span></a>
+  </section>
+
 </div>
