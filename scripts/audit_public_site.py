@@ -50,6 +50,23 @@ def check(root: Path) -> None:
     ), "Homepage image missing accessible alt text or correct source"
 
 
+    # The three migrated ARVO assets must exist at public relative URLs.
+    for asset in (
+        "assets/img/arvo-presenting-2025.jpg",
+        "assets/img/arvo-badge-2025.png",
+        "assets/pdf/arvo-2025-poster.pdf",
+    ):
+        output = root / asset
+        assert output.is_file() and output.stat().st_size > 1_000, (
+            f"Missing ARVO archival asset: {asset}"
+        )
+    publication_html = (root / "publications" / "index.html").read_text(
+        encoding="utf-8"
+    )
+    assert "arvo-presenting-2025.jpg" in publication_html
+    assert "arvo-badge-2025.png" in publication_html
+    assert "arvo-2025-poster.pdf" in publication_html
+
     sitemap = root / "sitemap.xml"
     assert sitemap.is_file(), "Missing sitemap.xml"
     xml = ET.parse(sitemap)

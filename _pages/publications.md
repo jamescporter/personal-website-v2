@@ -36,7 +36,7 @@ nav: false
           <img
             src="{{ '/assets/img/arvo-presenting-2025.jpg' | relative_url }}"
             alt="Research presentation at the ARVO 2025 conference"
-            loading="lazy"
+            loading="eager"
             decoding="async"
           >
           <figcaption>Presenting research at ARVO 2025.</figcaption>
@@ -45,7 +45,7 @@ nav: false
           <img
             src="{{ '/assets/img/arvo-badge-2025.png' | relative_url }}"
             alt="ARVO 2025 badge"
-            loading="lazy"
+            loading="eager"
             decoding="async"
           >
           <figcaption>ARVO 2025.</figcaption>
