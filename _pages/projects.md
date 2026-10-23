@@ -55,8 +55,3 @@ My portfolio focuses on **problems I have worked on, methods I have implemented 
     </div>
   </article>
 </section>
-
-<section class="site-section" aria-labelledby="more-professional-work">
-  <h2 id="more-professional-work">More research and technical work</h2>
-  <p>For verified research outputs, software records and additional public profiles, see <a href="{{ '/publications/' | relative_url }}">Publications</a> and <a href="{{ '/links/' | relative_url }}">Links &amp; Profiles</a>. A full recruitment CV and restricted or unpublished research code are not hosted here.</p>
-</section>

@@ -598,7 +598,7 @@ ninja-keys::part(ninja-selected) {
 
 /* Keep each portfolio case study together when printing to A4. */
 @media print {
-  #main-content :is(#retinal-imaging, #retfound-packaging, #extreme-classification, #python-utilities) {
+  #main-content :is(#retinal-imaging, #retfound-packaging, #extreme-classification) {
     break-inside: avoid;
     page-break-inside: avoid;
   }
