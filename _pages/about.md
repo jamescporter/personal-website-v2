@@ -43,9 +43,4 @@ permalink: /
     <a href="{{ '/cv/' | relative_url }}">Experience, education and technical expertise <span aria-hidden="true">→</span></a>
   </section>
 
-  <section class="site-section jp-personal" aria-labelledby="personal-work">
-    <h2 id="personal-work">Personal projects &amp; writing</h2>
-    <p>Independent software, game modifications, custom maps and interests beyond academic work have a separate home here.</p>
-    <div class="site-actions"><a href="{{ '/personal/' | relative_url }}">Personal projects</a><a href="{{ '/writing/' | relative_url }}">Writing</a></div>
-  </section>
 </div>

@@ -2,11 +2,12 @@
 layout: page
 title: About
 permalink: /about/
+description: Professional and academic background of James C. Porter.
 nav: false
 ---
 
-I am a PhD researcher interested in how imaging, computation and population-scale data can inform biomedical research.
+I am an MRC-funded PhD researcher at the University of Edinburgh's Usher Institute, working at the intersection of retinal imaging, machine learning and precision medicine.
 
-Outside my academic work, I enjoy developing software, experimenting with game modifications, making maps and working on other independent projects. This website brings together my research, professional experience, writing and personal work.
+My background includes computer science, artificial intelligence and applied data analysis. I work with medical imaging and longitudinal research data, focusing on rigorous evaluation and reproducible computing.
 
-For research and career information, start with [Research]({{ '/research/' | relative_url }}) or [Experience & Education]({{ '/cv/' | relative_url }}). For other interests, see [Personal]({{ '/personal/' | relative_url }}).
+For details, see [Research]({{ '/research/' | relative_url }}), [Experience & Education]({{ '/cv/' | relative_url }}) and the [Professional Portfolio]({{ '/portfolio/' | relative_url }}).
