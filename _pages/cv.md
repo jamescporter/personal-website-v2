@@ -87,12 +87,13 @@ nav_order: 4
         <h3>PhD in Precision Medicine <span class="xp-qualifier">In progress</span></h3>
         <p class="xp-organisation">University of Edinburgh &amp; University of Glasgow</p>
         <p>MRC-funded doctoral research on AI-based retinal image analysis for monitoring neurodegenerative brain health.</p>
+        <p class="xp-detail"><strong>Doctoral project:</strong> “Realising the potential of retinal image analysis with AI methods for monitoring neurodegenerative brain health in the community.”</p>
       </article>
       <article class="xp-education-card">
         <p class="xp-date">2018–2021</p>
         <h3>MSc Artificial Intelligence <span class="xp-qualifier">Merit</span></h3>
         <p class="xp-organisation">University of Edinburgh · School of Informatics</p>
-        <p>Dissertation completed in collaboration with Amazon Research, investigating memory-efficient extreme classification using hashing and Count-Min Sketch methods.</p>
+        <p>Dissertation supervised by <a href="https://homepages.inf.ed.ac.uk/imurray2/">Professor Iain Murray</a> in collaboration with <a href="https://www.amazon.science/locations/edinburgh">Amazon Research</a>, investigating memory-efficient extreme classification using hashing and Count-Min Sketch methods.</p>
       </article>
       <article class="xp-education-card">
         <p class="xp-date">2014–2017</p>

@@ -1,0 +1,42 @@
+name: Import previously published ARVO media
+
+on:
+  push:
+    branches: [migrate-legacy-academic-highlights]
+    paths:
+      - .github/workflows/import-legacy-arvo.yml
+
+permissions:
+  contents: write
+
+jobs:
+  import:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Check out migration branch
+        uses: actions/checkout@v4
+        with:
+          ref: migrate-legacy-academic-highlights
+
+      - name: Copy original publicly published research material
+        run: |
+          set -euo pipefail
+          mkdir -p assets/img assets/pdf
+          ROOT=https://raw.githubusercontent.com/jamescporter/jamescporter.github.io/b941e278f868cac22881e1d1a95197b98497ef5c/files
+          curl -fLsS --retry 3 "$ROOT/arvo_me_presenting2025.jpg" -o assets/img/arvo-presenting-2025.jpg
+          curl -fLsS --retry 3 "$ROOT/badge_arvo2025.png" -o assets/img/arvo-badge-2025.png
+          curl -fLsS --retry 3 "$ROOT/2025-05-03%20ARVO_Poster_final.3.pdf" -o assets/pdf/arvo-2025-poster.pdf
+          test "$(git hash-object assets/img/arvo-presenting-2025.jpg)" = "919e56520fcf942c1758e4ed63f3b4351cd5362e"
+          test "$(git hash-object assets/img/arvo-badge-2025.png)" = "d7d8653369e11188c731f18c85f63f873cd7345d"
+          test "$(git hash-object assets/pdf/arvo-2025-poster.pdf)" = "028ea22d0b69babde2095aa67cca9c481036d91f"
+          echo "Transferred original public assets with verified Git blob hashes"
+
+      - name: Commit archival media and remove one-use importer
+        run: |
+          set -euo pipefail
+          rm .github/workflows/import-legacy-arvo.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/img/arvo-presenting-2025.jpg assets/img/arvo-badge-2025.png assets/pdf/arvo-2025-poster.pdf .github/workflows/import-legacy-arvo.yml
+          git commit -m "Import public ARVO media with verified provenance"
+          git push origin HEAD:migrate-legacy-academic-highlights

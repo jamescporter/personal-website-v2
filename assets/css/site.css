@@ -643,3 +643,37 @@ ninja-keys::part(ninja-selected) {
     display: none;
   }
 }
+
+/* Archival conference photographs, visually secondary to the verified citation. */
+.rs-arvo-gallery {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+.rs-arvo-gallery figure {
+  margin: 0;
+}
+.rs-arvo-gallery img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+.rs-arvo-gallery .rs-arvo-photo {
+  width: min(100%, 400px);
+}
+.rs-arvo-gallery .rs-arvo-badge {
+  width: min(100%, 140px);
+}
+.rs-arvo-gallery figcaption {
+  margin-top: 0.45rem;
+  color: var(--global-text-color-light);
+  font-size: 0.8125rem;
+}
+@media print {
+  .rs-arvo-gallery {
+    display: none;
+  }
+}
